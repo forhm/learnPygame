@@ -131,7 +131,9 @@ def checkCrash(enemy, plane):
     if (plane.x + 0.7*plane.image.get_width() > enemy.x) and (plane.x + 0.3*plane.image.get_width() < enemy.x + enemy.image.get_width()) and (plane.y + 0.7*plane.image.get_height() > enemy.y) and (plane.y + 0.3*plane.image.get_height() < enemy.y + enemy.image.get_height()):
         return True
     return False
-    
+
+plane = Plane()
+
 enemies = []
 for i in range(5):
     enemies.append(Enemy())
@@ -141,8 +143,6 @@ bullets = []
 for i in range(5):
 #向list中添加5发子弹
     bullets.append(Bullet())
-
-plane = Plane()
 
 count_b = len(bullets)
 #子弹总数
