@@ -19,9 +19,7 @@ bg2 = pygame.image.load('bg2.jpg')
 #读取图片并保存，以后不用再次读取
 background = bg2.convert()
 #加载并转换图像
-# plane = pygame.image.load('plane.jpg').convert()
-#加载飞机图像
-# bullet = pygame.image.load('bullet.jpg').convert_alpha()
+
 print(pygame.font.get_fonts())
 # 所有可用的系统字体
 count = 0
@@ -31,9 +29,8 @@ score = 0
 highest = 0
 #最高分
 
-font = pygame.font.SysFont('couriernew', 22)#pygame.font.Font(sysfont, 32)
-# 要显示的分数
-font2 = pygame.font.SysFont('couriernew', 22)#pygame.font.Font(sysfont, 32)
+font = pygame.font.SysFont('couriernew', 22)
+font2 = pygame.font.SysFont('couriernew', 22)
 # 要显示的最高分
 
 def chbg():
@@ -75,12 +72,7 @@ class Bullet:
         
     def move(self):
         #处理子弹的运动
-        # if self.y < 0:
-            # mouseX, mouseY = pygame.mouse.get_pos()
-            # self.x = mouseX - self.image.get_width() / 2
-            # self.y = mouseY - self.image.get_height() / 2
-        # else:
-            # self.y -= 1
+        
         if self.active:
         #激活状态下，向上移动
             self.y -= 3
