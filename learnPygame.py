@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import pygame
 #导入pygame库
 from sys import exit
