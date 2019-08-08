@@ -33,16 +33,16 @@ font = pygame.font.SysFont('couriernew', 22)
 font2 = pygame.font.SysFont('couriernew', 22)
 # 要显示的最高分
 
-def chbg():
-#定义一个change background的函数，用于点击鼠标后改变背景图片
-    if event.type == pygame.MOUSEBUTTONDOWN:
-        #接收到鼠标按下事件后更换背景
-        if count % 2 == 0:
-            background = bg2.convert()
-        else:
-            background = bg1.convert()
-        count += 1
-        # 计数器加1，改变奇偶性
+def chbg(count):
+#定义一个change background的函数，用于gamg eover后改变背景图片
+    #接收到鼠标按下事件后更换背景
+    if count % 2 == 0:
+        background = bg2.convert()
+    else:
+        background = bg1.convert()
+    
+    return background
+    # 计数器加1，改变奇偶性
 
 class Plane:
     def restart(self):
@@ -160,6 +160,9 @@ while True:
     if gameover and event.type == pygame.MOUSEBUTTONUP:
         #重置游戏
         
+        count += 1
+        background = chbg(count)
+        #改变背景图片
         plane.restart()
         for e in enemies:
             e.restart()
